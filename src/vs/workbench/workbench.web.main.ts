@@ -29,6 +29,9 @@ import './browser/parts/dialogs/dialog.web.contribution.js';
 
 import './browser/web.main.js';
 
+// Immersive editing uses the browser's WebXR session and headset permissions.
+import './contrib/horizon/browser/horizon.contribution.js';
+
 //#endregion
 
 

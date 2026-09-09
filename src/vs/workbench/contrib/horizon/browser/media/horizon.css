@@ -1,0 +1,68 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.horizon-workbench {
+	position: fixed;
+	inset: 0;
+	z-index: 2500;
+	overflow: auto;
+	padding: var(--vscode-spacing-size240);
+	background: var(--vscode-editor-background);
+	color: var(--vscode-editor-foreground);
+	font-family: inherit;
+}
+
+.horizon-workbench header {
+	display: flex;
+	align-items: center;
+	gap: var(--vscode-spacing-size160);
+	flex-wrap: wrap;
+}
+
+.horizon-workbench h1 {
+	font-size: 24px;
+	font-weight: var(--vscode-fontWeight-semiBold);
+	margin-right: auto;
+}
+
+.horizon-workbench button {
+	min-height: 56px;
+	padding: var(--vscode-spacing-size120) var(--vscode-spacing-size240);
+	border: 1px solid var(--vscode-button-border, transparent);
+	border-radius: var(--vscode-cornerRadius-small);
+	background: var(--vscode-button-background);
+	color: var(--vscode-button-foreground);
+	font: inherit;
+	font-size: var(--vscode-fontSize-heading2);
+	cursor: pointer;
+	touch-action: manipulation;
+}
+
+.horizon-workbench button:hover { background: var(--vscode-button-hoverBackground); }
+.horizon-workbench button:focus-visible { outline: 2px solid var(--vscode-focusBorder); outline-offset: 2px; }
+.horizon-workbench button:disabled { opacity: 0.5; cursor: default; }
+.horizon-workbench p { color: var(--vscode-descriptionForeground); font-size: 16px; line-height: 1.5; }
+
+.horizon-surfaces {
+	display: grid;
+	grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
+	gap: var(--vscode-spacing-size160);
+	max-width: 1500px;
+	margin: var(--vscode-spacing-size240) auto;
+}
+
+.horizon-surfaces canvas {
+	width: 100%;
+	border-radius: var(--vscode-cornerRadius-large);
+	touch-action: manipulation;
+}
+
+.horizon-surfaces canvas:last-child { grid-column: 2; }
+
+@media (max-width: 700px) {
+	.horizon-surfaces { grid-template-columns: 1fr; }
+	.horizon-surfaces canvas:first-child { max-height: 240px; width: auto; }
+	.horizon-surfaces canvas:last-child { grid-column: 1; }
+}
